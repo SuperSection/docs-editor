@@ -20,6 +20,8 @@ import { Separator } from "@/components/ui/separator";
 import { useEditorStore } from "@/store/use-editor-store";
 import { FontFamilyButton } from "@/components/toolbar/font-family-button";
 import { HeadingLevelButton } from "@/components/toolbar/heading-level-button";
+import { TextColorButton } from "@/components/toolbar/text-color-button";
+import { HighlightColorButton } from "@/components/toolbar/highlight-color-button";
 
 interface ToolbarButtonProps {
 	onClick?: () => void;
@@ -142,8 +144,8 @@ export const Toolbar = () => {
 			{sections[1].map((item) => (
 				<ToolbarButton key={item.label} {...item} />
 			))}
-			{/* TODO: Text color */}
-			{/* TODO: Highlight color */}
+			<TextColorButton />
+			<HighlightColorButton />
 			<Separator orientation="vertical" className="h-6 bg-neutral-300" />
 			{/* TODO: Link */}
 			{/* TODO: Image */}
