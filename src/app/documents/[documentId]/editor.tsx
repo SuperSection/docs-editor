@@ -11,6 +11,9 @@ import TableCell from "@tiptap/extension-table-cell";
 import TableHeader from "@tiptap/extension-table-header";
 import TableRow from "@tiptap/extension-table-row";
 import StarterKit from "@tiptap/starter-kit";
+import TextStyle from "@tiptap/extension-text-style";
+import FontFamily from "@tiptap/extension-font-family";
+
 import { useEditorStore } from "@/store/use-editor-store";
 
 export const Editor = () => {
@@ -50,6 +53,8 @@ export const Editor = () => {
 		},
 		extensions: [
 			StarterKit,
+			TextStyle,
+			FontFamily,
 			Underline,
 			TaskList,
 			TaskItem.configure({
