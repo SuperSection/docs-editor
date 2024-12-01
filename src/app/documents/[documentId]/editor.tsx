@@ -1,6 +1,7 @@
 "use client";
 
 import { useEditor, EditorContent } from "@tiptap/react";
+import Underline from "@tiptap/extension-underline";
 import TaskItem from "@tiptap/extension-task-item";
 import TaskList from "@tiptap/extension-task-list";
 import Image from "@tiptap/extension-image";
@@ -49,6 +50,7 @@ export const Editor = () => {
 		},
 		extensions: [
 			StarterKit,
+			Underline,
 			TaskList,
 			TaskItem.configure({
 				nested: true,
@@ -66,7 +68,7 @@ export const Editor = () => {
 	return (
 		<div className="size-full overflow-x-auto bg-[#F9FBFD] px-4 print:p-0 print:bg-white print:overflow-visible">
 			<div className="min-w-max flex justify-center w-[816px] py-4 print:py-0 mx-auto print:w-full print:min-w-0">
-				<EditorContent editor={editor} />
+				<EditorContent editor={editor} className="print:block" />
 			</div>
 		</div>
 	);
