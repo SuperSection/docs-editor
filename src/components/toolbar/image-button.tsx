@@ -10,9 +10,16 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
-const ImageButton = () => {
+export const ImageButton = () => {
   const { editor } = useEditorStore();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [imageUrl, setImageUrl] = useState("");
@@ -32,11 +39,11 @@ const ImageButton = () => {
       if (file) {
         const imageUrl = URL.createObjectURL(file);
         onChange(imageUrl);
-      };
+      }
     };
 
     input.click();
-  }
+  };
 
   const handleImageUrlSubmit = () => {
     if (imageUrl) {
@@ -44,7 +51,7 @@ const ImageButton = () => {
       setImageUrl("");
       setIsDialogOpen(false);
     }
-  }
+  };
 
   return (
     <>
@@ -54,12 +61,18 @@ const ImageButton = () => {
             <ImageIcon className="size-4" />
           </button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="">
-          <DropdownMenuItem className="flex items-center cursor-pointer" onClick={onUpload}>
+        <DropdownMenuContent>
+          <DropdownMenuItem
+            className="flex items-center cursor-pointer"
+            onClick={onUpload}
+          >
             <UploadIcon className="size-4 mr-2" />
             Upload
           </DropdownMenuItem>
-          <DropdownMenuItem className="flex items-center cursor-pointer" onClick={() => setIsDialogOpen(true)}>
+          <DropdownMenuItem
+            className="flex items-center cursor-pointer"
+            onClick={() => setIsDialogOpen(true)}
+          >
             <SearchIcon className="size-4 mr-2" />
             Paste image URL
           </DropdownMenuItem>
@@ -90,5 +103,3 @@ const ImageButton = () => {
     </>
   );
 };
-
-export default ImageButton;
