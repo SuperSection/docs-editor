@@ -7,7 +7,9 @@ import {
   PAGE_WIDTH,
 } from "@/constants/document.const";
 
+
 const markers = Array.from({ length: 83 }, (_, i) => i);
+
 
 export const Ruler = () => {
   const [leftMargin, setLeftMargin] = useState<number>(INITIAL_MARGIN);
@@ -66,6 +68,7 @@ export const Ruler = () => {
   const handleRightMarkerDoubleClick = () => {
     setRightMargin(INITIAL_MARGIN);
   };
+
 
   return (
     <div
@@ -129,6 +132,7 @@ export const Ruler = () => {
   );
 };
 
+
 interface MarkerProps {
   position: number;
   isLeft: boolean;
@@ -144,6 +148,7 @@ const Marker = ({
   onMouseDown,
   onDoubleClick,
 }: MarkerProps) => {
+
   return (
     <div
       className="absolute top-0 w-4 h-full cursor-ew-resize z-[5] group -ml-2"
